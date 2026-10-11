@@ -1,0 +1,914 @@
+[
+ {
+  "zh": "无畏契约：源能行动",
+  "en": "Valorant Mobile"
+ },
+ {
+  "zh": "无畏契约",
+  "en": "Valorant"
+ },
+ {
+  "zh": "源能行动",
+  "en": "Valorant Mobile"
+ },
+ {
+  "zh": "全局音量设置",
+  "en": "Master Volume"
+ },
+ {
+  "zh": "音效音量设置",
+  "en": "SFX Volume"
+ },
+ {
+  "zh": "背景音乐音量设置",
+  "en": "Music Volume"
+ },
+ {
+  "zh": "语音播报音量设置",
+  "en": "Announcer Volume"
+ },
+ {
+  "zh": "小队语音通话设置",
+  "en": "Team Voice Chat"
+ },
+ {
+  "zh": "语音喇叭音量",
+  "en": "Voice Volume"
+ },
+ {
+  "zh": "麦克风音量",
+  "en": "Mic Volume"
+ },
+ {
+  "zh": "麦克风回路自测",
+  "en": "Mic Loopback Test"
+ },
+ {
+  "zh": "长按自测",
+  "en": "Hold to Test"
+ },
+ {
+  "zh": "音效设置",
+  "en": "Audio Settings"
+ },
+ {
+  "zh": "声音设置",
+  "en": "Audio Settings"
+ },
+ {
+  "zh": "异形屏",
+  "en": "Notch"
+ },
+ {
+  "zh": "帧率",
+  "en": "Frame Rate"
+ },
+ {
+  "zh": "画质",
+  "en": "Graphics"
+ },
+ {
+  "zh": "震动反馈",
+  "en": "Vibration"
+ },
+ {
+  "zh": "战斗体验",
+  "en": "Combat Experience"
+ },
+ {
+  "zh": "纯净专注模式",
+  "en": "Focus Mode"
+ },
+ {
+  "zh": "设备负载流畅",
+  "en": "Device Load: Smooth"
+ },
+ {
+  "zh": "设备负载",
+  "en": "Device Load"
+ },
+ {
+  "zh": "异形屏适配",
+  "en": "Notch Fit"
+ },
+ {
+  "zh": "辉光",
+  "en": "Bloom"
+ },
+ {
+  "zh": "极致",
+  "en": "Ultra"
+ },
+ {
+  "zh": "推荐",
+  "en": "Recommended"
+ },
+ {
+  "zh": "节能",
+  "en": "Power Saving"
+ },
+ {
+  "zh": "芙雄",
+  "en": "Agents"
+ },
+ {
+  "zh": "超高",
+  "en": "Very High"
+ },
+ {
+  "zh": "均衡",
+  "en": "Balanced"
+ },
+ {
+  "zh": "流畅",
+  "en": "Smooth"
+ },
+ {
+  "zh": "高清",
+  "en": "HD"
+ },
+ {
+  "zh": "帧率设置",
+  "en": "Frame Rate"
+ },
+ {
+  "zh": "画面品质",
+  "en": "Graphics Quality"
+ },
+ {
+  "zh": "抗锯齿",
+  "en": "Anti-aliasing"
+ },
+ {
+  "zh": "摇杆",
+  "en": "Joystick"
+ },
+ {
+  "zh": "静步",
+  "en": "Walk"
+ },
+ {
+  "zh": "登录",
+  "en": "Log In"
+ },
+ {
+  "zh": "掠影",
+  "en": "Snapshots"
+ },
+ {
+  "zh": "安全中心",
+  "en": "Security Center"
+ },
+ {
+  "zh": "成长守护",
+  "en": "Parental Controls"
+ },
+ {
+  "zh": "迅游加速器",
+  "en": "Xunyou Booster"
+ },
+ {
+  "zh": "加速器",
+  "en": "Booster"
+ },
+ {
+  "zh": "仓库",
+  "en": "Inventory"
+ },
+ {
+  "zh": "仓国",
+  "en": "Inventory"
+ },
+ {
+  "zh": "仓居",
+  "en": "Inventory"
+ },
+ {
+  "zh": "仓库库",
+  "en": "Inventory"
+ },
+ {
+  "zh": "攻略",
+  "en": "Guides"
+ },
+ {
+  "zh": "全球冠军赛",
+  "en": "Champions"
+ },
+ {
+  "zh": "冠军赛",
+  "en": "Champions"
+ },
+ {
+  "zh": "四缺一",
+  "en": "Need 1 more"
+ },
+ {
+  "zh": "三缺一",
+  "en": "Need 1 more"
+ },
+ {
+  "zh": "三缺二",
+  "en": "Need 2 more"
+ },
+ {
+  "zh": "二缺三",
+  "en": "Need 3 more"
+ },
+ {
+  "zh": "五缺一",
+  "en": "Need 1 more"
+ },
+ {
+  "zh": "铂金局",
+  "en": "Platinum lobby"
+ },
+ {
+  "zh": "互赞",
+  "en": "Like for like"
+ },
+ {
+  "zh": "拾梦",
+  "en": "Dream"
+ },
+ {
+  "zh": "综合频道",
+  "en": "General chat"
+ },
+ {
+  "zh": "瓦谷",
+  "en": "Valley"
+ },
+ {
+  "zh": "瓦合",
+  "en": "Valley"
+ },
+ {
+  "zh": "瓦会",
+  "en": "Valley"
+ },
+ {
+  "zh": "瓦公",
+  "en": "Valley"
+ },
+ {
+  "zh": "活动中心",
+  "en": "Events"
+ },
+ {
+  "zh": "万象地带",
+  "en": "Variety Zone"
+ },
+ {
+  "zh": "勇士学院",
+  "en": "Warrior Academy"
+ },
+ {
+  "zh": "序幕",
+  "en": "Prologue"
+ },
+ {
+  "zh": "背包",
+  "en": "Inventory"
+ },
+ {
+  "zh": "画面",
+  "en": "Graphics"
+ },
+ {
+  "zh": "声音",
+  "en": "Audio"
+ },
+ {
+  "zh": "语言",
+  "en": "Language"
+ },
+ {
+  "zh": "商城",
+  "en": "Store"
+ },
+ {
+  "zh": "武器",
+  "en": "Weapons"
+ },
+ {
+  "zh": "学院",
+  "en": "Academy"
+ },
+ {
+  "zh": "赛季",
+  "en": "Season"
+ },
+ {
+  "zh": "发现",
+  "en": "Discover"
+ },
+ {
+  "zh": "找队友",
+  "en": "Find Players"
+ },
+ {
+  "zh": "找队伍",
+  "en": "Find Team"
+ },
+ {
+  "zh": "普通",
+  "en": "Unrated"
+ },
+ {
+  "zh": "排位",
+  "en": "Ranked"
+ },
+ {
+  "zh": "娱乐",
+  "en": "Casual"
+ },
+ {
+  "zh": "综合",
+  "en": "General"
+ },
+ {
+  "zh": "系列",
+  "en": "Series"
+ },
+ {
+  "zh": "绑定手机",
+  "en": "Link Phone"
+ },
+ {
+  "zh": "通行证",
+  "en": "Battle Pass"
+ },
+ {
+  "zh": "全新地图",
+  "en": "New Map"
+ },
+ {
+  "zh": "名场面",
+  "en": "Highlights"
+ },
+ {
+  "zh": "限时开启",
+  "en": "Limited Time"
+ },
+ {
+  "zh": "认证进度",
+  "en": "Progress"
+ },
+ {
+  "zh": "开始游戏",
+  "en": "Play"
+ },
+ {
+  "zh": "开始匹配",
+  "en": "Find Match"
+ },
+ {
+  "zh": "取消匹配",
+  "en": "Cancel"
+ },
+ {
+  "zh": "准备",
+  "en": "Ready"
+ },
+ {
+  "zh": "好友",
+  "en": "Friends"
+ },
+ {
+  "zh": "邮件",
+  "en": "Mail"
+ },
+ {
+  "zh": "战绩",
+  "en": "Match History"
+ },
+ {
+  "zh": "生涯",
+  "en": "Career"
+ },
+ {
+  "zh": "任务",
+  "en": "Missions"
+ },
+ {
+  "zh": "活动",
+  "en": "Events"
+ },
+ {
+  "zh": "公告",
+  "en": "News"
+ },
+ {
+  "zh": "商店",
+  "en": "Store"
+ },
+ {
+  "zh": "确定",
+  "en": "OK"
+ },
+ {
+  "zh": "确认",
+  "en": "Confirm"
+ },
+ {
+  "zh": "取消",
+  "en": "Cancel"
+ },
+ {
+  "zh": "返回",
+  "en": "Back"
+ },
+ {
+  "zh": "关闭",
+  "en": "Close"
+ },
+ {
+  "zh": "领取",
+  "en": "Claim"
+ },
+ {
+  "zh": "已领取",
+  "en": "Claimed"
+ },
+ {
+  "zh": "一键领取",
+  "en": "Claim All"
+ },
+ {
+  "zh": "购买",
+  "en": "Buy"
+ },
+ {
+  "zh": "前往",
+  "en": "Go"
+ },
+ {
+  "zh": "分享",
+  "en": "Share"
+ },
+ {
+  "zh": "聊天",
+  "en": "Chat"
+ },
+ {
+  "zh": "组队",
+  "en": "Party"
+ },
+ {
+  "zh": "邀请",
+  "en": "Invite"
+ },
+ {
+  "zh": "房间",
+  "en": "Room"
+ },
+ {
+  "zh": "自定义",
+  "en": "Custom"
+ },
+ {
+  "zh": "训练场",
+  "en": "Range"
+ },
+ {
+  "zh": "新手教学",
+  "en": "Tutorial"
+ },
+ {
+  "zh": "模式",
+  "en": "Mode"
+ },
+ {
+  "zh": "地图选择",
+  "en": "Map Select"
+ },
+ {
+  "zh": "排行榜",
+  "en": "Leaderboard"
+ },
+ {
+  "zh": "个人信息",
+  "en": "Profile"
+ },
+ {
+  "zh": "收藏",
+  "en": "Collection"
+ },
+ {
+  "zh": "皮肤",
+  "en": "Skins"
+ },
+ {
+  "zh": "挂饰",
+  "en": "Buddies"
+ },
+ {
+  "zh": "喷漆",
+  "en": "Sprays"
+ },
+ {
+  "zh": "名片",
+  "en": "Player Cards"
+ },
+ {
+  "zh": "称号",
+  "en": "Titles"
+ },
+ {
+  "zh": "头像",
+  "en": "Avatar"
+ },
+ {
+  "zh": "每日任务",
+  "en": "Daily Missions"
+ },
+ {
+  "zh": "每周任务",
+  "en": "Weekly Missions"
+ },
+ {
+  "zh": "奖励",
+  "en": "Rewards"
+ },
+ {
+  "zh": "等级",
+  "en": "Level"
+ },
+ {
+  "zh": "经验",
+  "en": "XP"
+ },
+ {
+  "zh": "段位",
+  "en": "Rank"
+ },
+ {
+  "zh": "胜",
+  "en": "Win"
+ },
+ {
+  "zh": "负",
+  "en": "Loss"
+ },
+ {
+  "zh": "击杀",
+  "en": "Kills"
+ },
+ {
+  "zh": "死亡",
+  "en": "Deaths"
+ },
+ {
+  "zh": "助攻",
+  "en": "Assists"
+ },
+ {
+  "zh": "团队死斗",
+  "en": "Team Deathmatch"
+ },
+ {
+  "zh": "个人死斗",
+  "en": "Deathmatch"
+ },
+ {
+  "zh": "死斗",
+  "en": "Deathmatch"
+ },
+ {
+  "zh": "爆破模式",
+  "en": "Spike Mode"
+ },
+ {
+  "zh": "极速模式",
+  "en": "Swiftplay"
+ },
+ {
+  "zh": "匹配中",
+  "en": "Searching"
+ },
+ {
+  "zh": "在线",
+  "en": "Online"
+ },
+ {
+  "zh": "离线",
+  "en": "Offline"
+ },
+ {
+  "zh": "游戏中",
+  "en": "In Game"
+ },
+ {
+  "zh": "队伍",
+  "en": "Team"
+ },
+ {
+  "zh": "全部",
+  "en": "All"
+ },
+ {
+  "zh": "已拥有",
+  "en": "Owned"
+ },
+ {
+  "zh": "未拥有",
+  "en": "Not Owned"
+ },
+ {
+  "zh": "免费",
+  "en": "Free"
+ },
+ {
+  "zh": "精选",
+  "en": "Featured"
+ },
+ {
+  "zh": "新品",
+  "en": "New"
+ },
+ {
+  "zh": "充值",
+  "en": "Top Up"
+ },
+ {
+  "zh": "源能币",
+  "en": "VP"
+ },
+ {
+  "zh": "源能币可领",
+  "en": "VP to Claim"
+ },
+ {
+  "zh": "天枢云阙活动",
+  "en": "Tianshu Event"
+ },
+ {
+  "zh": "设置",
+  "en": "Settings"
+ },
+ {
+  "zh": "基础",
+  "en": "Basic"
+ },
+ {
+  "zh": "界面布局",
+  "en": "HUD Layout"
+ },
+ {
+  "zh": "音画设置",
+  "en": "Audio & Graphics"
+ },
+ {
+  "zh": "英雄",
+  "en": "Agents"
+ },
+ {
+  "zh": "灵敏度",
+  "en": "Sensitivity"
+ },
+ {
+  "zh": "准星设置",
+  "en": "Crosshair"
+ },
+ {
+  "zh": "其他",
+  "en": "Other"
+ },
+ {
+  "zh": "操作",
+  "en": "Controls"
+ },
+ {
+  "zh": "智能开火",
+  "en": "Auto Fire"
+ },
+ {
+  "zh": "地图",
+  "en": "Map"
+ },
+ {
+  "zh": "战斗信息",
+  "en": "Combat Info"
+ },
+ {
+  "zh": "网络诊断",
+  "en": "Network Check"
+ },
+ {
+  "zh": "还原默认",
+  "en": "Reset Defaults"
+ },
+ {
+  "zh": "客服",
+  "en": "Support"
+ },
+ {
+  "zh": "反馈",
+  "en": "Feedback"
+ },
+ {
+  "zh": "退出登录",
+  "en": "Log Out"
+ },
+ {
+  "zh": "操控模式",
+  "en": "Control Mode"
+ },
+ {
+  "zh": "静步操作模式",
+  "en": "Walk Mode"
+ },
+ {
+  "zh": "按钮静步",
+  "en": "Walk Button"
+ },
+ {
+  "zh": "摇杆内圈静步",
+  "en": "Joystick Inner-Ring Walk"
+ },
+ {
+  "zh": "独立摇杆静步",
+  "en": "Separate Walk Stick"
+ },
+ {
+  "zh": "开镜模式",
+  "en": "ADS Mode"
+ },
+ {
+  "zh": "下蹲模式",
+  "en": "Crouch Mode"
+ },
+ {
+  "zh": "点击",
+  "en": "Tap"
+ },
+ {
+  "zh": "长按",
+  "en": "Hold"
+ },
+ {
+  "zh": "混合模式",
+  "en": "Hybrid"
+ },
+ {
+  "zh": "进阶设置",
+  "en": "Advanced"
+ },
+ {
+  "zh": "辅助瞄准",
+  "en": "Aim Assist"
+ },
+ {
+  "zh": "开火时自动静步",
+  "en": "Auto-Walk When Firing"
+ },
+ {
+  "zh": "狙击枪自动开镜",
+  "en": "Sniper Auto-Scope"
+ },
+ {
+  "zh": "左手持枪",
+  "en": "Left-Handed"
+ },
+ {
+  "zh": "快捷上绳",
+  "en": "Quick Rope"
+ },
+ {
+  "zh": "自动切副武器",
+  "en": "Auto Switch to Sidearm"
+ },
+ {
+  "zh": "开启",
+  "en": "On"
+ },
+ {
+  "zh": "显示彩色枪口闪光",
+  "en": "Colored Muzzle Flash"
+ },
+ {
+  "zh": "独立检视按钮",
+  "en": "Separate Inspect Button"
+ },
+ {
+  "zh": "优先自动装备",
+  "en": "Auto-Equip Priority"
+ },
+ {
+  "zh": "上一个武器",
+  "en": "Last Weapon"
+ },
+ {
+  "zh": "最强武器",
+  "en": "Strongest Weapon"
+ },
+ {
+  "zh": "避免近战武器",
+  "en": "Avoid Melee"
+ },
+ {
+  "zh": "按钮转动视角",
+  "en": "Look With Buttons"
+ },
+ {
+  "zh": "右开火按钮转动视角",
+  "en": "Right Fire Btn Turns Camera"
+ },
+ {
+  "zh": "开镜按钮转动视角",
+  "en": "ADS Btn Turns Camera"
+ },
+ {
+  "zh": "下蹲按钮转动视角",
+  "en": "Crouch Btn Turns Camera"
+ },
+ {
+  "zh": "跳跃按钮转动视角",
+  "en": "Jump Btn Turns Camera"
+ },
+ {
+  "zh": "换弹按钮转动视角",
+  "en": "Reload Btn Turns Camera"
+ },
+ {
+  "zh": "智能开火按钮转动视角",
+  "en": "Auto-Fire Btn Turns Camera"
+ },
+ {
+  "zh": "静步按钮转动视角",
+  "en": "Walk Btn Turns Camera"
+ },
+ {
+  "zh": "检视按钮转动视角",
+  "en": "Inspect Btn Turns Camera"
+ },
+ {
+  "zh": "滑屏设置",
+  "en": "Swipe Settings"
+ },
+ {
+  "zh": "陀螺仪设置",
+  "en": "Gyro Settings"
+ },
+ {
+  "zh": "大神方案",
+  "en": "Pro Presets"
+ },
+ {
+  "zh": "总体设置",
+  "en": "General"
+ },
+ {
+  "zh": "灵敏度方案",
+  "en": "Sensitivity Preset"
+ },
+ {
+  "zh": "低",
+  "en": "Low"
+ },
+ {
+  "zh": "中",
+  "en": "Med"
+ },
+ {
+  "zh": "高",
+  "en": "High"
+ },
+ {
+  "zh": "自定义方案",
+  "en": "Custom"
+ },
+ {
+  "zh": "镜头转向模式",
+  "en": "Camera Turn Mode"
+ },
+ {
+  "zh": "固定速度",
+  "en": "Fixed Speed"
+ },
+ {
+  "zh": "速度加速",
+  "en": "Acceleration"
+ },
+ {
+  "zh": "转向辅助",
+  "en": "Turn Assist"
+ },
+ {
+  "zh": "滑屏灵敏度",
+  "en": "Swipe Sensitivity"
+ },
+ {
+  "zh": "灵敏度一键调节",
+  "en": "One-Tap Sensitivity"
+ },
+ {
+  "zh": "开火复用镜头灵敏度",
+  "en": "Use Camera Sens When Firing"
+ },
+ {
+  "zh": "垂直灵敏度（Y轴灵敏度）",
+  "en": "Vertical (Y-Axis) Sensitivity"
+ }
+]

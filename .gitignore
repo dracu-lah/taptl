@@ -1,0 +1,39 @@
+# Gradle / Kotlin build output
+.gradle/
+.kotlin/
+build/
+captures/
+.externalNativeBuild/
+.cxx/
+
+# Local machine config (SDK path)
+local.properties
+
+# Signing: never commit keys or their passwords
+*.jks
+*.keystore
+*keystore.properties
+signing.properties
+
+# Build artifacts
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+
+# IDE
+.idea/
+*.iml
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Local screen recordings from capture sessions (large videos).
+# docs/reference/*.png stays tracked.
+docs/captures/

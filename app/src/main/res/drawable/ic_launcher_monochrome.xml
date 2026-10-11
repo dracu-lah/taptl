@@ -1,0 +1,63 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <!-- Two speech bubbles: Chinese 文 behind, English A in front. Kept inside the 66dp safe zone. -->
+    <group
+        android:pivotX="54"
+        android:pivotY="54"
+        android:scaleX="0.75"
+        android:scaleY="0.75"
+        android:translateY="-2">
+        <group>
+            <clip-path android:pathData="M0,0 H108 V108 H0 Z M59,43.5 A14.5,14.5 0 0 0 44.5,58 V74 A14.5,14.5 0 0 0 59,88.5 H77 A14.5,14.5 0 0 0 91.5,74 V58 A14.5,14.5 0 0 0 77,43.5 Z" />
+            <path
+                android:pathData="M31,22 H49 A8,8 0 0 1 57,30 V46 A8,8 0 0 1 49,54 H38 L27,62 L31,54 A8,8 0 0 1 23,46 V30 A8,8 0 0 1 31,22 Z"
+                android:strokeColor="#FFFFFFFF"
+                android:strokeWidth="4.5"
+                android:strokeLineJoin="round" />
+        </group>
+        <path
+            android:pathData="M40,27.2 V30"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M31.5,33.2 H48.5"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M45.4,34 Q42,44 31.8,47"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M34.6,34 Q38,44 47.6,46.6"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M59,50 H77 A8,8 0 0 1 85,58 V74 A8,8 0 0 1 77,82 L81,90 L70,82 H59 A8,8 0 0 1 51,74 V58 A8,8 0 0 1 59,50 Z"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.5"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M61.2,74.6 L68,57.6 L74.8,74.6"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+        <path
+            android:pathData="M63.8,68.4 H72.2"
+            android:strokeColor="#FFFFFFFF"
+            android:strokeWidth="4.2"
+            android:strokeLineCap="round"
+            android:strokeLineJoin="round" />
+    </group>
+</vector>

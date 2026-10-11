@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">TapTL</string>
+    <string name="tile_label">Translate</string>
+    <string name="channel_capture">Screen translation</string>
+    <string name="notif_capturing">Translating the screen</string>
+    <string name="notif_capturing_text">Tap the Translate tile to stop.</string>
+    <string name="notif_black_title">Translation stopped</string>
+    <string name="notif_black_text">This app hides its screen from capture, so it can\'t be translated.</string>
+</resources>
