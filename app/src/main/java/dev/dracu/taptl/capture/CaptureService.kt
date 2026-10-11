@@ -30,6 +30,8 @@ import dev.dracu.taptl.TAG
 import dev.dracu.taptl.overlay.OverlayController
 import dev.dracu.taptl.pipeline.Pipeline
 import dev.dracu.taptl.tile.TranslateTileService
+import kotlinx.coroutines.flow.MutableStateFlow
+import kotlinx.coroutines.flow.StateFlow
 
 enum class CaptureState { OFF, REQUESTING, ON }
 
@@ -57,6 +59,10 @@ class CaptureService : Service() {
     override fun onBind(intent: Intent?): IBinder? = null
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
+        if (intent?.action == ACTION_STOP) {
+            stopSelf()
+            return START_NOT_STICKY
+        }
         val data = intent?.let { IntentCompat.getParcelableExtra(it, EXTRA_DATA, Intent::class.java) }
         if (projection != null || data == null) {
             Log.w(TAG, "ignoring start: running=${projection != null}, data=${data != null}")
@@ -149,11 +155,16 @@ class CaptureService : Service() {
             this, 0, Intent(this, MainActivity::class.java),
             PendingIntent.FLAG_IMMUTABLE,
         )
+        val stop = PendingIntent.getService(
+            this, 0, Intent(this, CaptureService::class.java).setAction(ACTION_STOP),
+            PendingIntent.FLAG_IMMUTABLE,
+        )
         return NotificationCompat.Builder(this, CHANNEL_CAPTURE)
             .setSmallIcon(R.drawable.ic_tile)
             .setContentTitle(getString(R.string.notif_capturing))
             .setContentText(getString(R.string.notif_capturing_text))
             .setContentIntent(open)
+            .addAction(0, getString(R.string.notif_stop), stop)
             .setOngoing(true)
             .setCategory(NotificationCompat.CATEGORY_SERVICE)
             .build()
@@ -162,21 +173,32 @@ class CaptureService : Service() {
     companion object {
         private const val NOTIFICATION_ID = 1
         private const val NOTIFICATION_BLACK_ID = 2
+        private const val ACTION_STOP = "dev.dracu.taptl.STOP"
         private const val EXTRA_RESULT_CODE = "result_code"
         private const val EXTRA_DATA = "data"
 
         /** Lives in the app process; projection dies with the process, so OFF is right after a restart. */
-        @Volatile
-        var state = CaptureState.OFF
-            private set
+        private val _states = MutableStateFlow(CaptureState.OFF)
+        val states: StateFlow<CaptureState> = _states
+        val state get() = _states.value
 
         fun setState(context: Context, newState: CaptureState) {
             if (state == newState) return
             Log.i(TAG, "state $state → $newState")
-            state = newState
+            _states.value = newState
             TileService.requestListeningState(
                 context, ComponentName(context, TranslateTileService::class.java)
             )
+        }
+
+        /** From the app screen: ask for capture consent, which then starts the service. */
+        fun requestStart(context: Context) {
+            setState(context, CaptureState.REQUESTING)
+            context.startActivity(Intent(context, ConsentActivity::class.java))
+        }
+
+        fun stop(context: Context) {
+            context.stopService(Intent(context, CaptureService::class.java))
         }
 
         fun start(context: Context, resultCode: Int, data: Intent) {

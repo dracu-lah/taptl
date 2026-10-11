@@ -3,7 +3,6 @@ import java.util.Properties
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.compose)
-    alias(libs.plugins.ksp)
 }
 
 // Release signing lives outside the repo: ~/.android/taptl-keystore.properties
@@ -24,6 +23,10 @@ android {
         versionName = "0.1.0"
         // ML Kit ships big native libs; the target phones are all arm64.
         ndk { abiFilters += "arm64-v8a" }
+    }
+    // The app's own text is English only; drop the libraries' strings for other locales.
+    androidResources {
+        localeFilters += "en"
     }
 
     signingConfigs {
@@ -52,10 +55,12 @@ android {
     buildFeatures {
         compose = true
     }
-}
-
-ksp {
-    arg("room.schemaLocation", "$projectDir/schemas")
+    // Native libs (~27 MB, mostly ML Kit) and dex are stored raw by default. Compressed, the APK is
+    // about half the size; they get unpacked once at install instead of mapped from the APK.
+    packaging {
+        jniLibs { useLegacyPackaging = true }
+        dex { useLegacyPackaging = true }
+    }
 }
 
 dependencies {
@@ -63,14 +68,10 @@ dependencies {
     implementation(libs.androidx.activity.compose)
     implementation(platform(libs.compose.bom))
     implementation(libs.compose.material3)
-    implementation(libs.compose.ui.tooling.preview)
-    debugImplementation(libs.compose.ui.tooling)
     implementation(libs.mlkit.text.latin)
     implementation(libs.mlkit.text.chinese)
     implementation(libs.mlkit.text.japanese)
     implementation(libs.mlkit.text.korean)
     implementation(libs.mlkit.text.devanagari)
     implementation(libs.mlkit.translate)
-    implementation(libs.room.runtime)
-    ksp(libs.room.compiler)
 }

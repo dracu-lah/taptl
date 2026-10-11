@@ -51,13 +51,13 @@ Most game and screen translators need root, an Accessibility service, a cloud ac
 - **12 languages to English.** Pick yours on first launch, change it any time.
 - **Works where you read.** Menus, settings, store, popups. It hides itself during gameplay.
 - **Your taps still reach the game.** The overlay can't be touched.
-- **One tap on, one tap off.** A Quick Settings tile, no floating buttons.
+- **One tap on, one tap off.** Start in the app or from a Quick Settings tile; stop from the tile or the notification. No floating buttons.
 - **Light on battery.** It only does work when the screen changes.
 - **Game words built in** for Valorant Mobile (CN): agents, weapons, maps and settings use the official English names.
 
 ## Supported languages
 
-All text-reading models come inside the app. Each language's translator (about 30 MB) downloads once, then works offline.
+All text-reading models come inside the app. Each language's translator (about 40 MB) downloads once, then works offline.
 
 | Language | Reads | Game word list |
 |---|---|---|
@@ -83,18 +83,19 @@ Get the latest `app-release.apk` from **[GitHub Releases](https://github.com/dra
 ## Install
 
 1. Get `app-release.apk` (from [Releases](https://github.com/dracu-lah/taptl/releases/latest), or see [Build](#build)) and open it on the phone. Allow "install unknown apps" if asked.
-2. Open **TapTL**. A short welcome walks you through it:
-   - **Pick your language**: the language of the game you want in English.
+2. Open **TapTL**. A short welcome lets you pick your language, then the home screen lists what's left to set up:
    - **Show over other apps**: lets it draw the English on top of the game.
-   - **Notifications**: shows a notice while translating is on (Android requires one).
-   - **Download the translator**: about 30 MB, once per language. After that it works offline.
-3. Add the **Translate** tile: tap **Add tile** (Android 13+ asks with one tap), or swipe down twice, tap the pencil and drag "Translate" in.
+   - **Notifications**: shows a notice with a Stop button while translating is on (Android requires one).
+   - **Language pack**: about 40 MB, once per language, with a progress bar. After that it works offline.
+3. Optional: add the **Translate** tile when the home screen offers it (Android 13+ asks with one tap), or swipe down twice, tap the pencil and drag "Translate" in.
+
+Language, permissions and the intro live under the gear icon (Settings).
 
 ## Use
 
-- Open the game, swipe down and tap **Translate**. Android asks to share your screen every time; tap **Share screen**. This is an Android rule.
+- Tap **Start** in the app (or the **Translate** tile), then open the game. Android asks to share your screen every time; tap **Share screen**. This is an Android rule.
 - English appears over the text about half a second after the screen stops moving. While a list scrolls, the boxes hide, then come back.
-- Tap the tile again, or stop sharing from the red status-bar chip, to turn it off. Locking the phone also turns it off.
+- Tap **Stop** in the notification or the app, tap the tile again, or stop sharing from the red status-bar chip. Locking the phone also turns it off.
 - If an app blocks screen capture, TapTL tells you and turns itself off.
 
 ## Permissions

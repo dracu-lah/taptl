@@ -40,7 +40,7 @@ class TranslateTileService : TileService() {
     override fun onClick() {
         Log.i(TAG, "tile click in state ${CaptureService.state}")
         when (CaptureService.state) {
-            CaptureState.ON -> stopService(Intent(this, CaptureService::class.java))
+            CaptureState.ON -> CaptureService.stop(this)
             // REQUESTING re-opens consent too, so a lost dialog never leaves the tile stuck.
             CaptureState.OFF, CaptureState.REQUESTING ->
                 if (isLocked) unlockAndRun { requestConsent() } else requestConsent()

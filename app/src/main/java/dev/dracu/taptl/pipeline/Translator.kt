@@ -102,7 +102,7 @@ class Translator(context: Context, private val lang: Lang) {
 
         private fun model(lang: Lang) = TranslateRemoteModel.Builder(lang.code).build()
 
-        /** The model download the main screen starts (~30 MB per language). */
+        /** The model download the home screen starts (~40 MB per language). */
         fun downloadModel(lang: Lang): Task<Void> = Translation.getClient(options(lang)).let { client ->
             client.downloadModelIfNeeded().addOnCompleteListener { client.close() }
         }

@@ -20,7 +20,7 @@
 | UI | One Compose screen: permissions + a "how to add the tile" hint. Overlay = plain Canvas `View` |
 | Capture | MediaProjection → VirtualDisplay (half-res) → ImageReader (maxImages 2), in a `mediaProjection` foreground service |
 | OCR | ML Kit Text Recognition v2, Chinese, bundled model |
-| Translate | Glossary → in-memory LRU + Room cache → ML Kit on-device zh→en (model downloaded on first run, ~30 MB) |
+| Translate | Glossary → in-memory LRU + SQLite cache → ML Kit on-device zh→en (model downloaded on first run, ~30 MB) |
 | Glossary | Hand-made settings list (`docs/GLOSSARY_SEED.md`) + official Valorant names generated once from valorant-api.com (zh-CN ↔ en-US) into a bundled JSON |
 | Overlay | One `TYPE_APPLICATION_OVERLAY` window, `NOT_TOUCHABLE | NOT_FOCUSABLE`, alpha 0.8 (needed for touch pass-through on Android 12+), cutout-aware |
 | Anti-cheat | No AccessibilityService, no input injection, no memory access. Test on a secondary account first |
@@ -38,7 +38,7 @@ taptl/app/src/main/java/dev/dracu/taptl/
   pipeline/OcrEngine.kt              // ML Kit on dirty crops; keep CJK lines only
   pipeline/Translator.kt             // glossary → cache → ML Kit
   pipeline/Glossary.kt               // exact match, then longest-match on known terms
-  pipeline/TranslationCache.kt       // LRU + Room
+  pipeline/TranslationCache.kt       // LRU + SQLite
   pipeline/Pipeline.kt               // one low-priority worker, latest-frame-wins
   overlay/OverlayController.kt       // add/remove window, hide-for-capture, rotation
   overlay/OverlayView.kt             // boxes: sampled bg colour, contrast text, auto-shrink/2-line wrap

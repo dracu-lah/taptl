@@ -9,7 +9,6 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.selection.selectable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material3.Card
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.ModalBottomSheet
@@ -17,11 +16,7 @@ import androidx.compose.material3.RadioButton
 import androidx.compose.material3.Text
 import androidx.compose.material3.rememberModalBottomSheetState
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.getValue
-import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.rememberCoroutineScope
-import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
@@ -58,41 +53,25 @@ fun LanguageList(selected: Lang, onSelect: (Lang) -> Unit, modifier: Modifier = 
     }
 }
 
-/** "Translate from: Chinese" card. Tapping it opens the list in a bottom sheet. */
+/** The language list in a bottom sheet. Closes itself after a pick. */
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun LanguageCard(lang: Lang, onChange: (Lang) -> Unit) {
-    var open by remember { mutableStateOf(false) }
-    Card(onClick = { open = true }, modifier = Modifier.fillMaxWidth()) {
-        Row(Modifier.padding(16.dp), verticalAlignment = Alignment.CenterVertically) {
-            Column(Modifier.weight(1f)) {
-                Text(
-                    "Translate from",
-                    style = MaterialTheme.typography.labelMedium,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                )
-                Text("${lang.label}  ·  ${lang.native}", style = MaterialTheme.typography.titleMedium)
-            }
-            Text("Change", color = MaterialTheme.colorScheme.primary)
-        }
-    }
-    if (open) {
-        val sheet = rememberModalBottomSheetState(skipPartiallyExpanded = true)
-        val scope = rememberCoroutineScope()
-        ModalBottomSheet(onDismissRequest = { open = false }, sheetState = sheet) {
-            Column(Modifier.padding(horizontal = 16.dp)) {
-                Text("Translate from", style = MaterialTheme.typography.titleLarge)
-                Text(
-                    "Changes apply the next time you start translating.",
-                    style = MaterialTheme.typography.bodySmall,
-                    color = MaterialTheme.colorScheme.onSurfaceVariant,
-                    modifier = Modifier.padding(top = 4.dp, bottom = 8.dp),
-                )
-                LanguageList(lang, { picked ->
-                    onChange(picked)
-                    scope.launch { sheet.hide() }.invokeOnCompletion { open = false }
-                }, Modifier.padding(bottom = 16.dp))
-            }
+fun LanguageSheet(lang: Lang, onPick: (Lang) -> Unit, onDismiss: () -> Unit) {
+    val sheet = rememberModalBottomSheetState(skipPartiallyExpanded = true)
+    val scope = rememberCoroutineScope()
+    ModalBottomSheet(onDismissRequest = onDismiss, sheetState = sheet) {
+        Column(Modifier.padding(horizontal = 16.dp)) {
+            Text("Translate from", style = MaterialTheme.typography.titleLarge)
+            Text(
+                "The language of the text in your game.",
+                style = MaterialTheme.typography.bodyMedium,
+                color = MaterialTheme.colorScheme.onSurfaceVariant,
+                modifier = Modifier.padding(top = 4.dp, bottom = 8.dp),
+            )
+            LanguageList(lang, { picked ->
+                onPick(picked)
+                scope.launch { sheet.hide() }.invokeOnCompletion { onDismiss() }
+            }, Modifier.padding(bottom = 16.dp))
         }
     }
 }
