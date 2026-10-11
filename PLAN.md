@@ -20,7 +20,7 @@
 | UI | One Compose screen: permissions + a "how to add the tile" hint. Overlay = plain Canvas `View` |
 | Capture | MediaProjection → VirtualDisplay (half-res) → ImageReader (maxImages 2), in a `mediaProjection` foreground service |
 | OCR | ML Kit Text Recognition v2, Chinese, bundled model |
-| Translate | Glossary → in-memory LRU + SQLite cache → ML Kit on-device zh→en (model downloaded on first run, ~30 MB) |
+| Translate | Glossary → in-memory LRU + SQLite cache → ML Kit on-device zh→en (model downloaded on first run, ~40 MB) |
 | Glossary | Hand-made settings list (`docs/GLOSSARY_SEED.md`) + official Valorant names generated once from valorant-api.com (zh-CN ↔ en-US) into a bundled JSON |
 | Overlay | One `TYPE_APPLICATION_OVERLAY` window, `NOT_TOUCHABLE | NOT_FOCUSABLE`, alpha 0.8 (needed for touch pass-through on Android 12+), cutout-aware |
 | Anti-cheat | No AccessibilityService, no input injection, no memory access. Test on a secondary account first |

@@ -19,6 +19,7 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.res.stringResource
 import androidx.core.content.ContextCompat
 import dev.dracu.taptl.Lang
 import dev.dracu.taptl.R
@@ -48,6 +49,7 @@ fun rememberSetup(lang: Lang, resumes: Int): Setup {
     val context = LocalContext.current
     val prefs = remember { context.getSharedPreferences(PREFS, Context.MODE_PRIVATE) }
     val pack = rememberLanguagePack(lang, resumes)
+    val tileLabel = stringResource(R.string.tile_label)
     var tileAdded by remember(resumes) { mutableStateOf(prefs.getBoolean(KEY_TILE_ADDED, false)) }
     // Bumped when the permission dialog closes, so canNotify is read again.
     var notifyAsks by remember { mutableIntStateOf(0) }
@@ -83,7 +85,7 @@ fun rememberSetup(lang: Lang, resumes: Int): Setup {
             {
                 context.getSystemService(StatusBarManager::class.java).requestAddTileService(
                     ComponentName(context, TranslateTileService::class.java),
-                    context.getString(R.string.tile_label),
+                    tileLabel,
                     Icon.createWithResource(context, R.drawable.ic_tile),
                     context.mainExecutor,
                 ) { result ->
