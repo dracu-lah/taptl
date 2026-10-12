@@ -30,26 +30,75 @@
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // Before / after: a range input drives the split; the segmented button jumps to either end.
+  // Before / after: a range input drives the split; the segmented button glides to either end.
+  // Once it scrolls into view, the handle sweeps both ways so visitors see it can be dragged.
   var compare = document.querySelector('.compare');
   if (compare) {
     var range = compare.querySelector('input[type="range"]');
+    var segGroup = document.querySelector('.segmented');
     var seg = document.querySelectorAll('[data-compare]');
+    var calm = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    var pos = Number(range.value), frame = 0, hintTimer = 0, heading = '';
     var set = function (v) {
+      pos = v;
       compare.style.setProperty('--pos', v + '%');
       range.value = v;
+      var active = '';
       seg.forEach(function (b) {
-        var target = b.getAttribute('data-compare') === 'before' ? 100 : 0;
-        b.setAttribute('aria-pressed', String(Math.abs(v - target) < 1));
+        var side = b.getAttribute('data-compare');
+        var on = Math.abs(v - (side === 'before' ? 100 : 0)) < 1;
+        b.setAttribute('aria-pressed', String(on));
+        if (on) active = side;
       });
+      // While a button glide runs, the pill already sits on the side it is heading to.
+      if (segGroup) segGroup.setAttribute('data-active', heading || active);
     };
-    range.addEventListener('input', function () { set(Number(range.value)); });
+    // Eased glide from the current split to `to`; calls `done` when it lands.
+    var glide = function (to, ms, done) {
+      cancelAnimationFrame(frame);
+      if (calm) { set(to); if (done) done(); return; }
+      var from = pos, start = performance.now();
+      var step = function (now) {
+        var t = Math.min(1, (now - start) / ms);
+        var e = t < 0.5 ? 4 * t * t * t : 1 - Math.pow(-2 * t + 2, 3) / 2;
+        set(from + (to - from) * e);
+        if (t < 1) frame = requestAnimationFrame(step); else if (done) done();
+      };
+      frame = requestAnimationFrame(step);
+    };
+    var touched = function () {
+      heading = '';
+      compare.classList.remove('idle');
+      clearTimeout(hintTimer);
+    };
+    range.addEventListener('pointerdown', function () { touched(); cancelAnimationFrame(frame); });
+    range.addEventListener('input', function () { touched(); cancelAnimationFrame(frame); set(Number(range.value)); });
     seg.forEach(function (b) {
       b.addEventListener('click', function () {
-        set(b.getAttribute('data-compare') === 'before' ? 100 : 0);
+        touched();
+        heading = b.getAttribute('data-compare');
+        glide(heading === 'before' ? 100 : 0, 650, function () { heading = ''; set(pos); });
       });
     });
-    set(Number(range.value));
+    set(pos);
+
+    if (!calm && 'IntersectionObserver' in window) {
+      compare.classList.add('idle');
+      var seen = new IntersectionObserver(function (entries) {
+        if (!entries[0].isIntersecting) return;
+        seen.disconnect();
+        hintTimer = setTimeout(function () {
+          if (!compare.classList.contains('idle')) return;
+          glide(72, 700, function () {
+            if (!compare.classList.contains('idle')) return;
+            glide(28, 900, function () {
+              if (compare.classList.contains('idle')) glide(50, 700);
+            });
+          });
+        }, 500);
+      }, { threshold: 0.6 });
+      seen.observe(compare);
+    }
   }
 
   // Sections slide in once, as they enter the viewport.
