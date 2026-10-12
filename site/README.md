@@ -2,12 +2,15 @@
 
 Plain static files: no build step, no framework. Deploy this folder as-is.
 
-## Cloudflare Pages
+## Cloudflare
 
-- Framework preset: **None**. Build command: *(empty)*. Build output directory: `site`.
+Deployed as a Worker with static assets: `wrangler.jsonc` at the repo root points at `site/`.
+In the Git setup use path `/`, an empty build command and `npx wrangler deploy` as the deploy command.
+(Cloudflare Pages also works: preset None, empty build command, output directory `site`.)
+
 - `_headers` sets security headers (including a strict CSP) and caching.
 - `_redirects` gives short links: `/apk` (latest APK), `/download`, `/sponsor`, `/coffee`, `/github`.
-- `404.html` is served automatically for unknown paths.
+- `404.html` is served for unknown paths.
 
 ## Domain
 

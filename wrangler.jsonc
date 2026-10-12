@@ -1,0 +1,10 @@
+// Cloudflare Workers config for the website: serves the static files in site/ as-is.
+// _headers and _redirects in site/ still apply.
+{
+  "name": "taptl",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "404-page"
+  }
+}
