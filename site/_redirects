@@ -8,3 +8,6 @@
 /coffee     https://buymeacoffee.com/nevil.dev  302
 /install    /#install  301
 /faq        /#faq  301
+
+# Google Search Console verification: serve the file at its .html address without the clean-URL redirect.
+/googlebfc0add964995784.html /googlebfc0add964995784 200
