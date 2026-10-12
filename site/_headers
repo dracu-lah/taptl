@@ -1,0 +1,38 @@
+# Cloudflare Pages response headers.
+# The sha256 in script-src is the inline theme script in every page head. Change that script and
+# the hash must change too (the browser console prints the new one).
+/*
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: DENY
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: camera=(), microphone=(), geolocation=(), interest-cohort=()
+  Strict-Transport-Security: max-age=31536000; includeSubDomains
+  Content-Security-Policy: default-src 'self'; img-src 'self' data:; media-src 'self'; style-src 'self' 'unsafe-inline'; script-src 'self' 'sha256-UGth7uNNIiHcBFMUlcjdFwcSdzOnmszhKRotqUSst1U='; font-src 'self'; connect-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'none'
+
+/fonts/*
+  Cache-Control: public, max-age=31536000, immutable
+  Access-Control-Allow-Origin: *
+
+/img/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/video/*
+  Cache-Control: public, max-age=604800, stale-while-revalidate=2592000
+
+/support/*.svg
+  Cache-Control: public, max-age=604800
+
+/icons.svg
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+
+/styles.css
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/app.js
+  Cache-Control: public, max-age=3600, stale-while-revalidate=86400
+
+/og.png
+  Cache-Control: public, max-age=604800
+
+/favicon.svg
+  Cache-Control: public, max-age=604800

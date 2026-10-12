@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TapTL: live game translator for Android, Chinese to English and more</title>
+<meta name="description" content="TapTL puts live English over the text in games and apps on Android. Built for Valorant Mobile CN, works with any game. 12 languages, offline, no root, no accessibility service. Free and open source.">
+<link rel="canonical" href="https://taptl.nevil.dev/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+<meta name="author" content="Nevil (dracu-lah)">
+<meta name="keywords" content="game translator Android, screen translator, Valorant Mobile English, 无畏契约 源能行动 English, Chinese game translator, OCR overlay, offline translator, TapTL">
+<meta name="theme-color" content="#F5FAFC" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0E1416" media="(prefers-color-scheme: dark)">
+<meta name="color-scheme" content="light dark">
+
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="TapTL">
+<meta property="og:title" content="TapTL: live English over game text on Android">
+<meta property="og:description" content="A live on-screen translator for Android games. 12 languages to English, offline, no root. Built for Valorant Mobile CN.">
+<meta property="og:url" content="https://taptl.nevil.dev/">
+<meta property="og:image" content="https://taptl.nevil.dev/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TapTL: live English over Chinese text in games">
+<meta property="og:locale" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TapTL: live English over game text on Android">
+<meta name="twitter:description" content="A live on-screen translator for Android games. 12 languages to English, offline, no root.">
+<meta name="twitter:image" content="https://taptl.nevil.dev/og.png">
+
+<link rel="icon" href="/favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="/icon-512.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="preload" href="/fonts/google-sans-flex-latin.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script>
+(function () {
+  var d = document.documentElement;
+  d.className += ' js';
+  try { var t = localStorage.getItem('taptl-theme'); if (t === 'light' || t === 'dark') d.setAttribute('data-theme', t); } catch (e) {}
+})();
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "MobileApplication",
+  "name": "TapTL",
+  "alternateName": "TapTL live game translator",
+  "description": "A live on-screen translator for Android games and apps. It reads the text on screen with on-device OCR and draws English over it. 12 languages to English, offline after setup, no root and no accessibility service.",
+  "url": "https://taptl.nevil.dev/",
+  "image": "https://taptl.nevil.dev/og.png",
+  "screenshot": [
+    "https://taptl.nevil.dev/img/settings-after.png",
+    "https://taptl.nevil.dev/img/settings-before.png",
+    "https://taptl.nevil.dev/img/audio-after.png",
+    "https://taptl.nevil.dev/img/app.png"
+  ],
+  "applicationCategory": "UtilitiesApplication",
+  "applicationSubCategory": "Screen translator",
+  "operatingSystem": "Android 10 and above (64-bit ARM)",
+  "downloadUrl": "https://github.com/dracu-lah/taptl/releases/latest",
+  "installUrl": "https://taptl.nevil.dev/#install",
+  "softwareHelp": "https://taptl.nevil.dev/#faq",
+  "license": "https://opensource.org/licenses/MIT",
+  "isAccessibleForFree": true,
+  "inLanguage": "en",
+  "featureList": [
+    "Live English overlay over on-screen text in games and apps",
+    "12 source languages: Chinese, Japanese, Korean, Hindi, Spanish, Portuguese, French, German, Italian, Vietnamese, Indonesian, Turkish",
+    "On-device OCR and on-device translation, offline after a one-time download",
+    "No root, no accessibility service, no input injection",
+    "Taps pass through the overlay to the game",
+    "Hides itself during gameplay",
+    "Quick Settings tile to turn it on and off",
+    "Built-in Valorant Mobile CN word list with official English names"
+  ],
+  "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+  "author": {
+    "@type": "Person",
+    "name": "Nevil",
+    "alternateName": "dracu-lah",
+    "url": "https://nevil.dev",
+    "sameAs": ["https://github.com/dracu-lah", "https://nevil.dev"]
+  },
+  "codeRepository": "https://github.com/dracu-lah/taptl",
+  "funding": "https://github.com/sponsors/dracu-lah"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "TapTL",
+  "url": "https://taptl.nevil.dev/",
+  "inLanguage": "en",
+  "publisher": { "@type": "Person", "name": "Nevil", "url": "https://nevil.dev" }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Which games does TapTL work with?", "acceptedAnswer": { "@type": "Answer", "text": "Any app or game that allows screen capture. It was built and tuned on Valorant Mobile CN (无畏契约 源能行动), so that game gets the best results." } },
+    { "@type": "Question", "name": "Does TapTL need internet?", "acceptedAnswer": { "@type": "Answer", "text": "Only once per language, to download the translator. After that it works fully offline." } },
+    { "@type": "Question", "name": "Is TapTL safe with anti-cheat?", "acceptedAnswer": { "@type": "Answer", "text": "TapTL only looks at the screen, like a screen recorder, and draws on top. It does not touch the game, its memory or your taps. There is still no guarantee, because a game's anti-cheat decides for itself. Test on a secondary account first." } },
+    { "@type": "Question", "name": "Does TapTL translate during a match?", "acceptedAnswer": { "@type": "Answer", "text": "No. It hides during gameplay so it never covers what you need to see. It is for menus, settings, the store and popups." } },
+    { "@type": "Question", "name": "Why does Android ask to share my screen every time?", "acceptedAnswer": { "@type": "Answer", "text": "That is an Android rule on Android 14 and newer. Apps cannot skip it." } },
+    { "@type": "Question", "name": "Why do I have to add the Quick Settings tile myself?", "acceptedAnswer": { "@type": "Answer", "text": "Android requires you to confirm any Quick Settings tile. On Android 13 and newer TapTL asks with one tap. On older versions, swipe down twice, tap the pencil and drag Translate in." } },
+    { "@type": "Question", "name": "Can TapTL translate into a language other than English?", "acceptedAnswer": { "@type": "Answer", "text": "Not yet. Everything translates to English." } },
+    { "@type": "Question", "name": "Is TapTL free?", "acceptedAnswer": { "@type": "Answer", "text": "Yes. It is free and open source under the MIT license, with no ads and no paid tier." } }
+  ]
+}
+</script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="top-bar">
+  <div class="wrap bar-inner">
+    <a class="brand" href="/" aria-label="TapTL home">
+      <img src="/favicon.svg" width="36" height="36" alt="">
+      <span>TapTL</span>
+    </a>
+    <nav class="nav" aria-label="Primary">
+      <a href="/#features">Features</a>
+      <a href="/#how">How it works</a>
+      <a href="/#languages">Languages</a>
+      <a href="/#install">Install</a>
+      <a href="/#faq">FAQ</a>
+      <a href="/support/">Support</a>
+    </nav>
+    <div class="bar-actions">
+      <a class="icon-btn" href="https://github.com/dracu-lah/taptl" rel="noopener" aria-label="TapTL on GitHub"><svg class="ic"><use href="/icons.svg#github"/></svg></a>
+      <button class="icon-btn theme-toggle" id="theme-toggle" type="button" aria-label="Switch theme">
+        <svg class="ic sun"><use href="/icons.svg#sun"/></svg>
+        <svg class="ic moon"><use href="/icons.svg#moon"/></svg>
+      </button>
+      <a class="btn btn-filled" href="/apk"><svg class="ic ic-s"><use href="/icons.svg#download"/></svg><span class="btn-label">Download</span></a>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="chip-row">
+          <span class="chip accent">Free and open source</span>
+          <span class="chip">No root</span>
+          <span class="chip">Android 10+</span>
+        </div>
+        <h1>Read your game <span class="swap">in English.</span></h1>
+        <p class="lede">Live English over the text in your games. Made for Valorant Mobile CN.</p>
+        <div class="hero-cta">
+          <a class="btn btn-filled btn-xl" href="/apk"><svg class="ic"><use href="/icons.svg#download"/></svg>Download APK</a>
+          <a class="btn btn-tonal btn-xl" href="#see-it"><svg class="ic"><use href="/icons.svg#swap"/></svg>See it work</a>
+        </div>
+      </div>
+      <div class="hero-art" aria-hidden="true">
+        <div class="shape"></div>
+        <div class="shape shape-2"></div>
+        <div class="shape shape-3"></div>
+        <div class="phone">
+          <img src="/img/app.png" width="1080" height="2400" alt="" fetchpriority="high">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Before / after -->
+  <section id="see-it" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Before and after</p>
+        <h2 class="headline">Same screen. Now you can read it.</h2>
+        <p>Drag the handle: Chinese on the left, TapTL on the right. Real, unedited captures from a Poco F5.</p>
+      </div>
+      <div class="compare-card reveal">
+        <div class="compare-top">
+          <h3>Valorant Mobile CN, Settings</h3>
+          <div class="segmented" role="group" aria-label="Show">
+            <button type="button" data-compare="before" aria-pressed="false"><svg class="check"><use href="/icons.svg#check"/></svg>Chinese</button>
+            <button type="button" data-compare="after" aria-pressed="false"><svg class="check"><use href="/icons.svg#check"/></svg>English</button>
+          </div>
+        </div>
+        <div class="compare">
+          <img class="before" src="/img/settings-before.png" width="2400" height="1080" decoding="async" alt="Valorant Mobile settings screen in Chinese">
+          <img class="after" src="/img/settings-after.png" width="2400" height="1080" decoding="async" alt="The same settings screen with TapTL on, every label shown in English">
+          <span class="tag tag-before">Before</span>
+          <span class="tag tag-after">With TapTL</span>
+          <span class="divider"></span>
+          <span class="knob"><svg class="ic"><use href="/icons.svg#swap"/></svg></span>
+          <label class="visually-hidden" for="compare-range">Move the split between the Chinese and English screens</label>
+          <input id="compare-range" type="range" min="0" max="100" value="50">
+        </div>
+        <p class="compare-note">Game words like agents, weapons, maps and settings use the official English names from a built-in word list.</p>
+        <div class="shot-wide">
+          <img src="/img/audio-after.png" width="2400" height="1080" loading="lazy" decoding="async" alt="Valorant Mobile audio settings shown in English with TapTL">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why -->
+  <section id="why">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Why TapTL</p>
+        <h2 class="headline">It just watches the screen.</h2>
+        <p>Others need root, an accessibility service, a cloud account or a tap per screen. TapTL needs none.</p>
+      </div>
+      <div class="bento">
+        <div class="tile t1 reveal"><span class="big">0</span><div><h3>No root</h3><p>Install the APK and go. Your phone stays as is.</p></div></div>
+        <div class="tile t2 reveal"><span class="big">0</span><div><h3>No accessibility service</h3><p>No fake taps and no reading game memory.</p></div></div>
+        <div class="tile t3 reveal"><span class="big">1&times;</span><div><h3>Online once</h3><p>One download per language, then fully offline.</p></div></div>
+        <div class="tile t4 reveal"><span class="big">0.5 s</span><div><h3>Quick to appear</h3><p>English shows up as soon as the screen settles.</p></div></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Features</p>
+        <h2 class="headline">Small app. Does one thing well.</h2>
+      </div>
+      <div class="features">
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#wifi-off"/></svg></div>
+          <h3>Free and offline</h3>
+          <p>Reads and translates on your phone. Nothing goes online after setup.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#translate"/></svg></div>
+          <h3>12 languages to English</h3>
+          <p>Pick yours on first launch. Switch any time from the home screen.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#game"/></svg></div>
+          <h3>Works where you read</h3>
+          <p>Menus, settings, the store and popups. Hides itself during gameplay.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#touch"/></svg></div>
+          <h3>Taps reach the game</h3>
+          <p>The overlay can't be touched, so every tap goes straight to the game.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#toggle"/></svg></div>
+          <h3>One tap on, one tap off</h3>
+          <p>Start from the app or a Quick Settings tile. Stop from the tile or notification.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#eco"/></svg></div>
+          <h3>Light on battery</h3>
+          <p>Works only when the screen changes. A still screen costs almost nothing.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#book"/></svg></div>
+          <h3>Game words built in</h3>
+          <p>Valorant Mobile CN agents, weapons and maps use their official English names.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#hide"/></svg></div>
+          <h3>Gets out of the way</h3>
+          <p>Boxes hide while a list scrolls, then return half a second after it stops.</p>
+        </article>
+        <article class="feature reveal">
+          <div class="icon-wrap"><svg class="ic"><use href="/icons.svg#shield"/></svg></div>
+          <h3>Frames stay on your phone</h3>
+          <p>No account, no server, no analytics. What it sees is never uploaded.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- How it works -->
+  <section id="how">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">How it works</p>
+        <h2 class="headline">Five steps, all on the phone.</h2>
+      </div>
+      <ol class="pipeline">
+        <li class="reveal"><h3>Screen capture</h3><p>Android's own screen sharing, at half size. Nothing leaves the phone.</p></li>
+        <li class="reveal"><h3>Only what changed</h3><p>Each frame is checked against the last. No change, no work.</p></li>
+        <li class="reveal"><h3>Read the text</h3><p>ML Kit reads only the changed parts, in your chosen language.</p></li>
+        <li class="reveal"><h3>Translate</h3><p>Game word list, then cache, then on-device Google Translate.</p></li>
+        <li class="reveal"><h3>Draw</h3><p>One see-through layer puts colour-matched English over the text.</p></li>
+      </ol>
+      <div class="never reveal">
+        <strong>Never uses:</strong>
+        <span class="chip"><svg class="ic ic-s"><use href="/icons.svg#block"/></svg>Accessibility service</span>
+        <span class="chip"><svg class="ic ic-s"><use href="/icons.svg#block"/></svg>Fake taps</span>
+        <span class="chip"><svg class="ic ic-s"><use href="/icons.svg#block"/></svg>Reading game memory</span>
+        <span class="chip"><svg class="ic ic-s"><use href="/icons.svg#block"/></svg>Root</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Demo videos -->
+  <section id="demo">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Demo</p>
+        <h2 class="headline">Watch it, start to finish.</h2>
+        <p>Recorded on a Poco F5 with Android 17. No edits.</p>
+      </div>
+      <div class="videos">
+        <figure class="video-card reveal" style="margin:0">
+          <div class="landscape">
+            <video controls preload="none" playsinline poster="/img/settings-after.png" width="2400" height="1080">
+              <source src="/video/in-game.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h3>In the game (75 s)</h3>
+          <p>Tile on, settings tabs in English, tile off.</p>
+        </figure>
+        <figure class="video-card reveal" style="margin:0">
+          <div class="portrait">
+            <video controls preload="none" playsinline poster="/img/intro.png" width="1080" height="2400">
+              <source src="/video/setup.mp4" type="video/mp4">
+            </video>
+          </div>
+          <h3>Install and setup (1 min)</h3>
+          <p>Intro, language pick and setup.</p>
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- Languages -->
+  <section id="languages">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Languages</p>
+        <h2 class="headline">12 languages in. English out.</h2>
+        <p>Text reading is built in. Each translator (about 40 MB) downloads once, then works offline.</p>
+      </div>
+      <div class="lang-grid reveal">
+        <div class="lang star"><b lang="zh">中文</b><span>Chinese, best results</span></div>
+        <div class="lang"><b lang="ja">日本語</b><span>Japanese</span></div>
+        <div class="lang"><b lang="ko">한국어</b><span>Korean</span></div>
+        <div class="lang"><b lang="hi">हिन्दी</b><span>Hindi</span></div>
+        <div class="lang"><b lang="es">Español</b><span>Spanish</span></div>
+        <div class="lang"><b lang="pt">Português</b><span>Portuguese</span></div>
+        <div class="lang"><b lang="fr">Français</b><span>French</span></div>
+        <div class="lang"><b lang="de">Deutsch</b><span>German</span></div>
+        <div class="lang"><b lang="it">Italiano</b><span>Italian</span></div>
+        <div class="lang"><b lang="vi">Tiếng Việt</b><span>Vietnamese</span></div>
+        <div class="lang"><b lang="id">Indonesia</b><span>Indonesian</span></div>
+        <div class="lang"><b lang="tr">Türkçe</b><span>Turkish</span></div>
+      </div>
+      <p class="lang-note">The game word list covers Valorant Mobile CN for now. Other languages use the translator alone.</p>
+    </div>
+  </section>
+
+  <!-- Install -->
+  <section id="install">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Install</p>
+        <h2 class="headline">Set up in about a minute.</h2>
+      </div>
+      <div class="install-grid">
+        <div class="panel reveal">
+          <h3>Get started</h3>
+          <ol class="steps">
+            <li><p>Download <code>app-release.apk</code> and open it. Allow "install unknown apps" if asked.</p></li>
+            <li><div><p>Open TapTL, pick your language, then finish the home screen list:</p>
+              <ul>
+                <li><b>Show over other apps</b>, to draw on top.</li>
+                <li><b>Notifications</b>, for the Stop button.</li>
+                <li><b>Language pack</b>, about 40 MB, once.</li>
+              </ul></div></li>
+            <li><p>Optional: add the <b>Translate</b> tile when offered, or drag it in from Quick Settings.</p></li>
+            <li><p>Tap <b>Start</b>, open your game and tap <b>Share screen</b>. English shows in about half a second.</p></li>
+          </ol>
+          <a class="btn btn-filled btn-l" href="/apk"><svg class="ic"><use href="/icons.svg#download"/></svg>Download APK</a>
+          <a class="btn btn-text" href="https://github.com/dracu-lah/taptl/releases" rel="noopener">All releases<svg class="ic ic-s"><use href="/icons.svg#open"/></svg></a>
+        </div>
+        <div class="panel reveal">
+          <h3>Permissions, and why</h3>
+          <ul class="perm-list">
+            <li><span class="ic-wrap"><svg class="ic"><use href="/icons.svg#layers"/></svg></span><div><b>Display over other apps</b><span>Draws English over the game. Taps still go through.</span></div></li>
+            <li><span class="ic-wrap"><svg class="ic"><use href="/icons.svg#screen"/></svg></span><div><b>Screen capture</b><span>Reads the text. Frames stay on the phone.</span></div></li>
+            <li><span class="ic-wrap"><svg class="ic"><use href="/icons.svg#play"/></svg></span><div><b>Foreground service</b><span>Keeps capture running while you play.</span></div></li>
+            <li><span class="ic-wrap"><svg class="ic"><use href="/icons.svg#bell"/></svg></span><div><b>Notifications</b><span>The running notice, with a Stop button.</span></div></li>
+            <li><span class="ic-wrap"><svg class="ic"><use href="/icons.svg#cloud"/></svg></span><div><b>Internet</b><span>Only to download each translator once.</span></div></li>
+          </ul>
+        </div>
+      </div>
+      <div class="callout reveal" role="note">
+        <svg class="ic"><use href="/icons.svg#warning"/></svg>
+        <div>
+          <h3>Test on a secondary account first</h3>
+          <p>TapTL only records the screen and draws on top. It never touches game memory or taps, but anti-cheat decides for itself.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="section-head reveal">
+        <p class="eyebrow">Questions</p>
+        <h2 class="headline">Good to know.</h2>
+      </div>
+      <div class="faq-grid">
+      <div class="faq reveal">
+        <details>
+          <summary>Which games does it work with?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>Any app or game that allows screen capture. It was built and tuned on Valorant Mobile CN (<span lang="zh">无畏契约 源能行动</span>), so that game gets the best results.</p>
+        </details>
+        <details>
+          <summary>Does it need internet?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>Only once per language, to download the translator. After that it works fully offline.</p>
+        </details>
+        <details>
+          <summary>Is it safe with anti-cheat?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>TapTL only looks at the screen, like a screen recorder, and draws on top. It doesn't touch the game, its memory or your taps. Still, there's no guarantee: a game's anti-cheat can decide what it likes. Test on a secondary account first.</p>
+        </details>
+        <details>
+          <summary>Does it translate during a match?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>No. It hides during gameplay so it never covers what you need to see. It's for menus, settings, the store and popups.</p>
+        </details>
+        <details>
+          <summary>Why does Android ask to share my screen every time?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>That's an Android rule on Android 14 and newer. Apps can't skip it.</p>
+        </details>
+        <details>
+          <summary>Why do I have to add the tile myself?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>Android requires you to confirm any Quick Settings tile. On Android 13 and newer, TapTL asks with one tap. On older versions, swipe down twice, tap the pencil and drag "Translate" in.</p>
+        </details>
+        <details>
+          <summary>Can it translate into a language other than English?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>Not yet. Everything goes to English.</p>
+        </details>
+        <details>
+          <summary>Is it really free?<svg class="ic"><use href="/icons.svg#expand"/></svg></summary>
+          <p>Yes. It's open source under the MIT license, with no ads and no paid tier. If it helps you, you can <a href="/support/">chip in</a>, but nothing is locked behind it.</p>
+        </details>
+      </div>
+
+      <aside class="limits panel reveal">
+        <h3>Known limits</h3>
+        <ul>
+          <li>Menus only. No in-match chat.</li>
+          <li>Android 14+ asks to share the screen each time.</li>
+          <li>Apps that block capture can't be read.</li>
+          <li>Machine translation can be wrong or clumsy.</li>
+          <li>English output only. Word list is Valorant CN only.</li>
+          <li>64-bit ARM phones (almost all recent ones).</li>
+        </ul>
+      </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- Support -->
+  <section id="support" style="padding-top:0">
+    <div class="wrap">
+      <div class="support-band reveal">
+        <div>
+          <h2>Free, no ads, no paid tier.</h2>
+          <p>Built in spare time by <a href="https://nevil.dev" rel="noopener" style="color:inherit">Nevil</a>. If it saves you squinting at menus, a coffee or a sponsorship keeps it going.</p>
+        </div>
+        <div class="actions">
+          <a class="btn btn-on btn-l" href="https://github.com/sponsors/dracu-lah" rel="noopener"><svg class="ic"><use href="/icons.svg#heart"/></svg>Sponsor</a>
+          <a class="btn btn-ghost btn-l" href="https://buymeacoffee.com/nevil.dev" rel="noopener"><svg class="ic"><use href="/icons.svg#coffee"/></svg>Buy me a coffee</a>
+          <a class="btn btn-ghost btn-l" href="/support/">More ways to help</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <a class="brand" href="/"><img src="/favicon.svg" width="36" height="36" alt=""><span>TapTL</span></a>
+        <p class="muted small">Live English over game text on Android. Made by <a href="https://nevil.dev" rel="noopener">nevil.dev</a>.</p>
+      </div>
+      <nav aria-label="App">
+        <h2>App</h2>
+        <ul>
+          <li><a href="/apk">Download</a></li>
+          <li><a href="/#install">Install</a></li>
+          <li><a href="/#languages">Languages</a></li>
+          <li><a href="/#faq">FAQ</a></li>
+          <li><a href="/privacy/">Privacy</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Project">
+        <h2>Project</h2>
+        <ul>
+          <li><a href="https://github.com/dracu-lah/taptl" rel="noopener">Source code</a></li>
+          <li><a href="https://github.com/dracu-lah/taptl/releases" rel="noopener">Releases</a></li>
+          <li><a href="https://github.com/dracu-lah/taptl/issues" rel="noopener">Report a bug</a></li>
+          <li><a href="https://github.com/dracu-lah/taptl/blob/main/CONTRIBUTING.md" rel="noopener">Contributing</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Support">
+        <h2>Support</h2>
+        <ul>
+          <li><a href="/support/">Ways to help</a></li>
+          <li><a href="https://github.com/sponsors/dracu-lah" rel="noopener">GitHub Sponsors</a></li>
+          <li><a href="https://buymeacoffee.com/nevil.dev" rel="noopener">Buy me a coffee</a></li>
+          <li><a href="https://nevil.dev" rel="noopener">nevil.dev</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="footer-legal">
+      <p>MIT, &copy; 2026 Nevil (<a href="https://github.com/dracu-lah" rel="noopener">dracu-lah</a>). Translations by Google Translate (ML Kit, on-device). Text reading by ML Kit.</p>
+      <p>Valorant is a trademark of Riot Games. TapTL is not made by or linked to Riot Games or Tencent.</p>
+    </div>
+  </div>
+</footer>
+
+<script src="/app.js" defer></script>
+</body>
+</html>

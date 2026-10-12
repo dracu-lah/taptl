@@ -1,0 +1,10 @@
+# Cloudflare Pages redirects. 302 so they always follow the newest release.
+/apk        https://github.com/dracu-lah/taptl/releases/latest/download/app-release.apk  302
+/download   https://github.com/dracu-lah/taptl/releases/latest  302
+/releases   https://github.com/dracu-lah/taptl/releases  302
+/github     https://github.com/dracu-lah/taptl  302
+/source     https://github.com/dracu-lah/taptl  302
+/sponsor    https://github.com/sponsors/dracu-lah  302
+/coffee     https://buymeacoffee.com/nevil.dev  302
+/install    /#install  301
+/faq        /#faq  301

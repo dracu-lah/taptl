@@ -1,0 +1,16 @@
+{
+  "name": "TapTL",
+  "short_name": "TapTL",
+  "description": "A live on-screen translator for Android games. 12 languages to English, offline, no root.",
+  "start_url": "/",
+  "scope": "/",
+  "id": "/",
+  "lang": "en",
+  "display": "standalone",
+  "background_color": "#0E1416",
+  "theme_color": "#0B5C6B",
+  "icons": [
+    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" }
+  ]
+}

@@ -13,7 +13,7 @@
 Built first for Valorant Mobile (CN, 无畏契约 源能行动), and it works with any app or game.<br>
 Offline after setup. Turn it on and off from a Quick Settings tile.
 
-[Download](https://github.com/dracu-lah/taptl/releases/latest) · [Install](#install) · [Languages](#supported-languages) · [How it works](#how-it-works) · [FAQ](#faq) · [Build](#build)
+[Website](https://taptl.nevil.dev) · [Download](https://github.com/dracu-lah/taptl/releases/latest) · [Install](#install) · [Languages](#supported-languages) · [How it works](#how-it-works) · [FAQ](#faq) · [Build](#build)
 
 [简体中文](README.zh-CN.md)
 
@@ -191,6 +191,10 @@ Debug log:
 ```bash
 adb logcat -s TapTL
 ```
+
+## Website
+
+The site at **[taptl.nevil.dev](https://taptl.nevil.dev)** lives in [`site/`](site): plain HTML and CSS, no build step, deployed with Cloudflare Pages. See [`site/README.md`](site/README.md).
 
 ## Contributing
 
