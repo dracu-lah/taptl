@@ -2,11 +2,10 @@
 
 Plain static files: no build step, no framework. Deploy this folder as-is.
 
-## Cloudflare
+## Cloudflare Pages
 
-Deployed as a Worker with static assets: `wrangler.jsonc` at the repo root points at `site/`.
-In the Git setup use path `/`, an empty build command and `npx wrangler deploy` as the deploy command.
-(Cloudflare Pages also works: preset None, empty build command, output directory `site`.)
+Live at https://taptl.pages.dev, deployed from this repo on every push to `main`.
+Settings: framework preset **None**, empty build command, build output directory `site`.
 
 - `_headers` sets security headers (including a strict CSP) and caching.
 - `_redirects` gives short links: `/apk` (latest APK), `/download`, `/sponsor`, `/coffee`, `/github`.
@@ -14,11 +13,11 @@ In the Git setup use path `/`, an empty build command and `npx wrangler deploy` 
 
 ## Domain
 
-The site is served at `https://taptl.nevil.dev`. Canonical URLs, Open Graph, JSON-LD, the sitemap and
-robots.txt all use it. To move to another domain, replace it everywhere:
+Canonical URLs, Open Graph, JSON-LD, the sitemap and robots.txt all use `https://taptl.pages.dev`.
+If you add a custom domain later, replace it everywhere (and re-capture `og.png`, which shows the URL):
 
 ```bash
-grep -rl 'taptl.nevil.dev' site | xargs sed -i 's#taptl.nevil.dev#new.domain#g'
+grep -rl 'taptl.pages.dev' site | xargs sed -i 's#taptl.pages.dev#new.domain#g'
 ```
 
 ## Notes

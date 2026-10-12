@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1" xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
-    <loc>https://taptl.nevil.dev/</loc>
+    <loc>https://taptl.pages.dev/</loc>
     <lastmod>2026-10-12</lastmod>
-    <image:image><image:loc>https://taptl.nevil.dev/img/settings-after.png</image:loc></image:image>
-    <image:image><image:loc>https://taptl.nevil.dev/img/settings-before.png</image:loc></image:image>
-    <image:image><image:loc>https://taptl.nevil.dev/img/audio-after.png</image:loc></image:image>
-    <image:image><image:loc>https://taptl.nevil.dev/img/app.png</image:loc></image:image>
+    <image:image><image:loc>https://taptl.pages.dev/img/settings-after.png</image:loc></image:image>
+    <image:image><image:loc>https://taptl.pages.dev/img/settings-before.png</image:loc></image:image>
+    <image:image><image:loc>https://taptl.pages.dev/img/audio-after.png</image:loc></image:image>
+    <image:image><image:loc>https://taptl.pages.dev/img/app.png</image:loc></image:image>
     <video:video>
-      <video:thumbnail_loc>https://taptl.nevil.dev/img/settings-after.png</video:thumbnail_loc>
+      <video:thumbnail_loc>https://taptl.pages.dev/img/settings-after.png</video:thumbnail_loc>
       <video:title>TapTL in Valorant Mobile CN</video:title>
       <video:description>Turning on the Translate tile, browsing the game's settings in English, and turning it off.</video:description>
-      <video:content_loc>https://taptl.nevil.dev/video/in-game.mp4</video:content_loc>
+      <video:content_loc>https://taptl.pages.dev/video/in-game.mp4</video:content_loc>
       <video:duration>75</video:duration>
     </video:video>
     <video:video>
-      <video:thumbnail_loc>https://taptl.nevil.dev/img/intro.png</video:thumbnail_loc>
+      <video:thumbnail_loc>https://taptl.pages.dev/img/intro.png</video:thumbnail_loc>
       <video:title>Installing and setting up TapTL</video:title>
       <video:description>The intro, picking a language and the setup steps.</video:description>
-      <video:content_loc>https://taptl.nevil.dev/video/setup.mp4</video:content_loc>
+      <video:content_loc>https://taptl.pages.dev/video/setup.mp4</video:content_loc>
       <video:duration>60</video:duration>
     </video:video>
   </url>
-  <url><loc>https://taptl.nevil.dev/support/</loc><lastmod>2026-10-12</lastmod></url>
-  <url><loc>https://taptl.nevil.dev/privacy/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://taptl.pages.dev/support/</loc><lastmod>2026-10-12</lastmod></url>
+  <url><loc>https://taptl.pages.dev/privacy/</loc><lastmod>2026-10-12</lastmod></url>
 </urlset>
